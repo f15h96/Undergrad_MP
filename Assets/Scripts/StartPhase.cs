@@ -33,6 +33,10 @@ public class StartPhase : MonoBehaviour
     public void startPhase1()
     {
         currentPhase = Instantiate(phase1, transform.right, this.transform.rotation);
+        if (button != null)
+        {
+            button.gameObject.active = false;
+        }
         
     }
 

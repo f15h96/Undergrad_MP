@@ -43,15 +43,15 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// <summary>
         /// A prefab for visualizing an AugmentedImage.
         /// </summary>
-        public AugmentedImageVisualizer AugmentedImageVisualizerPrefab;
+        public AugmentedVisualizer AugmentedImageVisualizerPrefab;
 
         /// <summary>
         /// The overlay containing the fit to scan user guide.
         /// </summary>
         public GameObject FitToScanOverlay;
 
-        private Dictionary<int, AugmentedImageVisualizer> m_Visualizers
-            = new Dictionary<int, AugmentedImageVisualizer>();
+        private Dictionary<int, AugmentedVisualizer> m_Visualizers
+            = new Dictionary<int, AugmentedVisualizer>();
 
         private List<AugmentedImage> m_TempAugmentedImages = new List<AugmentedImage>();
 
@@ -94,16 +94,17 @@ namespace GoogleARCore.Examples.AugmentedImage
             // not previously have a visualizer. Remove visualizers for stopped images.
             foreach (var image in m_TempAugmentedImages)
             {
-                AugmentedImageVisualizer visualizer = null;
+                AugmentedVisualizer visualizer = null;
                 m_Visualizers.TryGetValue(image.DatabaseIndex, out visualizer);
                 if (image.TrackingState == TrackingState.Tracking && visualizer == null)
                 {
                     // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                     Anchor anchor = image.CreateAnchor(image.CenterPose);
-                    visualizer = (AugmentedImageVisualizer)Instantiate(
+                    visualizer = (AugmentedVisualizer)Instantiate(
                         AugmentedImageVisualizerPrefab, anchor.transform);
                     visualizer.Image = image;
                     m_Visualizers.Add(image.DatabaseIndex, visualizer);
+                    this.gameObject.GetComponent<AugmentedImageExampleController>().enabled = false;
                 }
                 else if (image.TrackingState == TrackingState.Stopped && visualizer != null)
                 {
