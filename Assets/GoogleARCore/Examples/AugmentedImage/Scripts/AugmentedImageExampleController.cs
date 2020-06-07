@@ -50,6 +50,10 @@ namespace GoogleARCore.Examples.AugmentedImage
         /// </summary>
         public GameObject FitToScanOverlay;
 
+        public Image InfoImage;
+
+        public Text InfoText;
+
         private Dictionary<int, AugmentedVisualizer> m_Visualizers
             = new Dictionary<int, AugmentedVisualizer>();
 
@@ -119,6 +123,8 @@ namespace GoogleARCore.Examples.AugmentedImage
                 if (visualizer.Image.TrackingState == TrackingState.Tracking)
                 {
                     FitToScanOverlay.SetActive(false);
+                    InfoImage.gameObject.SetActive(false);
+                    InfoText.gameObject.SetActive(false);
                     return;
                 }
             }

@@ -34,6 +34,10 @@ public class ToggleScript : MonoBehaviour
         if (musicToggle.isOn)
         {
             backgroundMusic.mute = false;
+            if(backgroundMusic.isPlaying == false)
+            {
+                backgroundMusic.Play();
+            }
         }
         else
         {

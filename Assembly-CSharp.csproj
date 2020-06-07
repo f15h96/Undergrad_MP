@@ -244,7 +244,6 @@
      <Compile Include="Assets\Scripts\AugmentedImageStart.cs" />
      <Compile Include="Assets\Scripts\AugmentedVisualizer.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
-     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\StartPhase.cs" />
      <Compile Include="Assets\Scripts\ToggleScript.cs" />
      <None Include="Assets\GoogleARCore\Examples\AugmentedFaces\Materials\Shaders\AugmentedFaceOccluder.shader" />

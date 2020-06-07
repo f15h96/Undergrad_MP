@@ -19,7 +19,9 @@ public class MainMenu : MonoBehaviour
     {
         
     }
-
+    /**
+     * loads the onsite scene
+     */
     public void OnSite()
     {
 
@@ -29,6 +31,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Augmented Image");
     }
 
+    /**
+     * loads the offsite scene
+     */
     public void OffSite()
     {
         canvas.transform.Find("OnSite").gameObject.SetActive(false);
@@ -37,6 +42,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("Not Site");
     }
 
+    /**
+     * loads the main menu scene
+     */
     public void gotoMenu()
     {
         SceneManager.LoadScene("MainMenu");

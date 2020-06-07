@@ -21,6 +21,9 @@ public class AugmentedImageStart : MonoBehaviour
         
     }
     
+    /**
+     * enables the canvas objects so that they are visable for the user
+     */
     public void enableCanvas()
     {
         canvas.gameObject.SetActive(true);

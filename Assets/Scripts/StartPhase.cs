@@ -9,12 +9,18 @@ using UnityEngine.UI;
 
 public class StartPhase : MonoBehaviour
 {
+    /**
+     * the phases are the different assets for the monument
+     */
     public GameObject phase1;
     public GameObject phase2;
     public GameObject phase3;
     public GameObject phase4;
     public Slider slider;
     public GameObject currentPhase;
+    /**
+     * the position of where the original phase was instantiated
+     */
     public Pose currentPhasePose;
     public Button button;
     private Anchor anchor;
@@ -36,6 +42,7 @@ public class StartPhase : MonoBehaviour
         if (button != null)
         {
             button.gameObject.active = false;
+            slider.gameObject.SetActive(true);
         }
         
     }

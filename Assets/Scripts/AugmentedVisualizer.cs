@@ -10,6 +10,9 @@ public class AugmentedVisualizer : MonoBehaviour
     private GameObject controller;
 
     private AugmentedImageStart imageStart;
+    /**
+     * enables the Augmented image and changes the position of the models to be overlayed onto the monument
+     */
     public void Start()
     {
         GameObject controller = GameObject.Find("ARController");
@@ -25,6 +28,9 @@ public class AugmentedVisualizer : MonoBehaviour
     {
     }
 
+    /**
+     * the adjustment of the phase so that the model is over the monument
+     */
     public void fixLocRot()
     {
         Vector3 adjust = new Vector3(0,-0.5f,0.5f);
